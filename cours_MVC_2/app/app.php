@@ -1,8 +1,5 @@
 <?php
 
-	// Chargement du moteur d'affichage
-	include_once('core/load.php');
-
 	// Récupération des paramètres de l'URL
 	if (!isset($_GET['module'])){
 		$module = DEFAULT_MODULE;
@@ -11,11 +8,11 @@
 	}
 
 	// Appel du controller du module demandé
-	$controller = 'app/controller/' . $module. '.php';
+	$controller = 'app/controller/' . $module. 's.php';
 	if (file_exists($controller)) {
 		include_once($controller);
 		// Instanciation du controller 
-		new Controller();
+		new Controller($module);
 	} else {
 		include_once('app/view/layouts/404.php');
 	}

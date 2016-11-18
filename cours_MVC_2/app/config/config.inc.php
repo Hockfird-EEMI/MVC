@@ -1,6 +1,6 @@
 <?php
 
-	define("DEFAULT_MODULE", "posts");
+	define("DEFAULT_MODULE", "post");
 
 	// Paramètre de la base de données
 	define("DB_HOST", "localhost");

@@ -1,19 +1,9 @@
 <?php 
+class Controller extends appController{
 
-// Chargement du model
-include_once('app/model/post.php');
-
-class Controller {
-
-	public $load;
-	public $model;
-
-	function __construct()
+	function __construct($module)
 	{
-		$this->load = new Load();
-		$this->model = new Model();
-		// var_dump($this);
-
+		parent::__construct($module);
 
 		// Récupération des paramètres de l'URL
 		if (isset($_GET['action'])) {

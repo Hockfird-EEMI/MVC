@@ -1,5 +1,5 @@
 <?php
-class Load 
+class coreView extends core
 {
 	function view( $module, $view, $data = null ) 
 	{
