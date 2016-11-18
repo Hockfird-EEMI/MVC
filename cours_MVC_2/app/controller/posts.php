@@ -3,8 +3,8 @@
 // Chargement du model
 include_once('app/model/post.php');
 
-class Controller 
-{
+class Controller {
+
 	public $load;
 	public $model;
 
@@ -34,7 +34,7 @@ class Controller
 	}
 
 	function index($offset, $limite) {
-		$data = $this->model->postList($limite, $offset);
+		$data = $this->model->postList($offset, $limite);
 		if ($data) {
 			define("PAGE_TITLE", "Listes articles");
 			$this->load->view('posts', 'index.php', $data);
@@ -44,6 +44,13 @@ class Controller
 	}
 
 	function view($id) {
+		$data = $this->model->postRead($id);
+		if ($data) {
+			define("PAGE_TITLE", "Détail articles");
+			$this->load->view('posts', 'view.php', $data[0]);
+		} else {
+			$this->load->view('layouts', 'error.php');
+		}		
 
 	}
 

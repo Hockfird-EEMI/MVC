@@ -1,1 +1,1 @@
-Erreur de données !!!! Tes données sont FALSE
+Erreur BDD les données sont FALSE ---> view/layouts/error.php
