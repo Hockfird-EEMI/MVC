@@ -1,7 +1,7 @@
 <?php
 
 // Constantes générales
-define("DB_CHARSET", "utf-8");
+define("DB_CHARSET", "utf8");
 
 	if (SERVER === "DEV") {
 

@@ -11,7 +11,7 @@ class coreModel extends core
 			// Options de connexion
 
 			$options = array(
-							PDO ::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
+							PDO ::MYSQL_ATTR_INIT_COMMAND => "SET NAMES " . DB_CHARSET,
 							PDO ::ATTR_ERRMODE => PDO ::ERRMODE_EXCEPTION);
 
 			$this->_pdo = new PDO( $dns, DB_USER, DB_PASSWORD, $options );
