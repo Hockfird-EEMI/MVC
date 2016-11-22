@@ -45,7 +45,10 @@ class Controller extends appController{
 	}
 
 	function page404() {
+		echo "DEBUG = " . DEBUG . "<br>";
+		echo "RUN = " . RUN . "<br>";
+		echo "GA = " . GA . "<br>";
 		// $this->load->view('404.php');
-		echo "l echo de l erreur 404 !!";
+		echo "echo ERREUR 404 !";
 	}
 }
