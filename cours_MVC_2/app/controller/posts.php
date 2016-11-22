@@ -49,6 +49,6 @@ class Controller extends appController{
 		echo "RUN = " . RUN . "<br>";
 		echo "GA = " . GA . "<br>";
 		// $this->load->view('404.php');
-		echo "echo ERREUR 404 !";
+		echo2 "echo ERREUR 404 !";
 	}
 }
