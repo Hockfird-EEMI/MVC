@@ -7,7 +7,7 @@ class Model extends appModel {
 
 		try {
 			// On constitue la requête	
-			$query = $this->_pdo->prepare('SELECT * FROM blog_posts
+			$query = $this->_pdo->prepare('SELECT * FROM ' . PREFIXE . ' posts
 											ORDER BY post_date ASC LIMIT :offset, :limite');
 			// On initialise les paramètres
 			$query->bindParam(':offset', $offset, PDO::PARAM_INT);
@@ -30,7 +30,7 @@ class Model extends appModel {
 
 		try {
 			// On constitue la requête	
-			$query = $this->_pdo->prepare('SELECT * FROM blog_posts
+			$query = $this->_pdo->prepare('SELECT * FROM ' . PREFIXE . ' posts
 											WHERE post_ID = :id');
 			// On initialise les paramètres
 			$query->bindParam(':id', $id, PDO::PARAM_INT);
