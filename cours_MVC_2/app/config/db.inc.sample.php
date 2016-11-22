@@ -7,6 +7,7 @@ define("DB_CHARSET", "utf8");
 
 		// Paramètre de la base de données
 		define("DB_HOST", "myhost1");
+		define("DB_PORT", "myport1");		
 		define("DB_NAME", "mydbname1");
 		define("DB_USER", "mylogin1");
 		define("DB_PASSWORD", "mypassword1");
@@ -17,6 +18,7 @@ define("DB_CHARSET", "utf8");
 
 		// Paramètre de la base de données
 		define("DB_HOST", "myhost2");
+		define("DB_PORT", "myport2");		
 		define("DB_NAME", "mydbname2");
 		define("DB_USER", "mylogin2");
 		define("DB_PASSWORD", "mypassword2");	
@@ -27,6 +29,7 @@ define("DB_CHARSET", "utf8");
 
 		// Paramètre de la base de données
 		define("DB_HOST", "myhost3");
+		define("DB_PORT", "myport3");		
 		define("DB_NAME", "mydbname3");
 		define("DB_USER", "mylogin3");
 		define("DB_PASSWORD", "mypassword3");			
