@@ -7,7 +7,7 @@ class coreModel extends core
 	function __construct()
 	{
 		try {
-			$dns = 'mysql:host=' . DB_HOST . '2;port=' . DB_PORT . ';dbname=' . DB_NAME;
+			$dns = 'mysql:host=' . DB_HOST . ';port=' . DB_PORT . ';dbname=' . DB_NAME;
 			// Options de connexion
 
 			$options = array(
