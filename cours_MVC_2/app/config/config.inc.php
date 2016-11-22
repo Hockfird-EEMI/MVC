@@ -8,6 +8,7 @@
 		define('RUN', 'NORMAL');
 		define('GA', true);
 
+
 	} else if (SERVER === "TEST") {
 		/**
 		* Constantes spécifiques pour config serveur de TEST
@@ -15,6 +16,7 @@
 		define('DEBUG', true);
 		define('RUN', 'NORMAL');
 		define('GA', false);
+
 
 	} else if (SERVER === "PROD") {
 		/**
@@ -27,11 +29,3 @@
 
 
 	define("DEFAULT_MODULE", "post");
-
-	// Paramètre de la base de données
-	define("DB_HOST", "localhost");
-	define("DB_NAME", "sayer");
-	define("DB_USER", "root");
-	define("DB_PASSWORD", "root");	
-
-
