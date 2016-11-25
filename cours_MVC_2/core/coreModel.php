@@ -88,9 +88,9 @@ class coreModel extends core
 			}
 			if (isset($options["limit"])) {
 				if (isset($options["offset"])) {
-					$query->bindParam(':offset', $options[offset], PDO::PARAM_INT);			
+					$query->bindParam(':offset', $options["offset"], PDO::PARAM_INT);			
 				}
-				$query->bindParam(':limit', $options[limit], PDO::PARAM_INT);						
+				$query->bindParam(':limit', $options["limit"], PDO::PARAM_INT);						
 			}			
 
 			// On execute la requête
