@@ -1,54 +1,55 @@
 <?php 
 class Controller extends appController{
 
-	function __construct($module)
-	{
-		parent::__construct($module);
+	function index() {
 
-		// Récupération des paramètres de l'URL
-		if (isset($_GET['action'])) {
-			if ($_GET['action']=='view') {
-				if (isset($_GET['id'])) {
-					// Action view
-					$this->view($_GET['id']);
-				} else {
-					$this->page404();
-				}
-			} else {
-				$this->page404();
-			}
+		// Traitement des paramètres 
+		if (isset ($_GET["page"])) {
+			$page = $_GET["page"];			
 		} else {
-			// Action index
-				$this->index(0, 5);
+			$page = 1;
 		}
-	}
 
-	function index($offset, $limite) {
-		$data = $this->model->postList($offset, $limite);
+		// Variable calculées 
+		$offset = ($page - 1) * PAGINATION;
+
+		// Appel du model
+		$data = $this->model->coreList("posts", array(
+								//"wherecolumn" => "post_category",
+								//"wherevalue" => 2,
+								"orderbycolumn" => "post_date",
+								"orderway" => "DESC",
+								"limit" => PAGINATION,
+								"offset" => $offset));
 		if ($data) {
+			// Appel de la vue	
 			define("PAGE_TITLE", "Listes articles");
 			$this->load->view('posts', 'index.php', $data);
 		} else {
+			// Appel de la vue	
 			$this->load->view('layouts', 'error.php');
 		}
 	}
 
-	function view($id) {
-		$data = $this->model->postRead($id);
-		if ($data) {
-			define("PAGE_TITLE", "Détail articles");
-			$this->load->view('posts', 'view.php', $data[0]);
+
+	function view() {
+
+		// Traitement des paramètres 
+		if (isset ($_GET["id"])) {
+			$id = $_GET["id"];			
+
+			// Appel du model
+			$data = $this->model->coreRead("posts", 
+									array(	"wherecolumn" => "post_ID", 
+											"wherevalue" => $id));
+			if ($data) {
+				define("PAGE_TITLE", "Détail articles");
+				$this->load->view('posts', 'view.php', $data);
+			} else {
+				$this->load->view('layouts', 'error.php');
+			}
 		} else {
-			$this->load->view('layouts', 'error.php');
+			die("Paramètre manquant !");
 		}		
-
-	}
-
-	function page404() {
-		echo "DEBUG = " . DEBUG . "<br>";
-		echo "RUN = " . RUN . "<br>";
-		echo "GA = " . GA . "<br>";
-		// $this->load->view('404.php');
-		echo "echo ERREUR 404 !";
 	}
 }

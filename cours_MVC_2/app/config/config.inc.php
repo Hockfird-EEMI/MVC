@@ -28,4 +28,8 @@
 	}
 
 
+	define("SITE_NAME", "MVC_POO");
+
 	define("DEFAULT_MODULE", "post");
+
+	define("PAGINATION", 5);
